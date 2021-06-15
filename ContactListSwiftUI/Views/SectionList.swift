@@ -14,7 +14,7 @@ struct SectionList: View {
         NavigationView {
             List {
                 ForEach(persons, id: \.phone) { person in
-                    Section(header: Text(person.fullName)) {
+                    Section(header: Text(person.fullName).fontWeight(.bold)) {
                         ContactCell(
                             imageName: "phone",
                             personDetail: person.phone
@@ -27,6 +27,7 @@ struct SectionList: View {
                     }
                 }
             }
+            .navigationTitle("Section List")
         }
     }
 }
