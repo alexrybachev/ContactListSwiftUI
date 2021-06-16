@@ -42,22 +42,5 @@ extension Person {
         
         return persons
     }
-    
-    static func getPerson(_ index: Int) -> Person {
-        
-        let name = DataManager.shared.names[index]
-        let surname = DataManager.shared.surnames[index]
-        let phone = DataManager.shared.phones[index]
-        let email = DataManager.shared.emails[index]
-        
-        let person = Person(
-            name: name,
-            surname: surname,
-            phone: phone,
-            email: email
-        )
-        
-        return person
-    }
 }
 

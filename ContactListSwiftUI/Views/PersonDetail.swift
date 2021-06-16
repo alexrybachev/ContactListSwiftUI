@@ -17,7 +17,7 @@ struct PersonDetail: View {
                 .resizable()
                 .frame(width: 200, height: 200, alignment: .center)
                 .padding([.top])
-            List {
+            Form {
                 ContactCell(
                     imageName: "phone",
                     personDetail: person.phone
@@ -35,6 +35,6 @@ struct PersonDetail: View {
 
 struct PersonDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PersonDetail(person: Person.getPerson(0))
+        PersonDetail(person: Person.getContactList().first!)
     }
 }
