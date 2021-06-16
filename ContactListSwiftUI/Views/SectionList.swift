@@ -25,6 +25,7 @@ struct SectionList: View {
                             personDetail: person.email
                         )
                     }
+                    .textCase(.none)
                 }
             }
             .navigationTitle("Section List")
