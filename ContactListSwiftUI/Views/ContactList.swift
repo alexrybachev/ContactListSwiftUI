@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContactList: View {
+    
     let persons: [Person]
     
     var body: some View {
         NavigationView {
-            List(persons, id: \.phone) { person in
+            List(persons) { person in
                 NavigationLink(destination: PersonDetail(person: person)) {
                     Text(person.fullName)
                 }

@@ -8,29 +8,33 @@
 import SwiftUI
 
 struct PersonDetail: View {
+    
     let person: Person
     
     var body: some View {
-        
-        VStack {
-            Image(systemName: "person.fill")
-                .resizable()
-                .frame(width: 200, height: 200, alignment: .center)
-                .padding([.top])
-            Form {
-                ContactCell(
-                    imageName: "phone",
-                    personDetail: person.phone
-                )
-                
-                ContactCell(
-                    imageName: "tray",
-                    personDetail: person.email
-                )
+        Form {
+            HStack {
+                Spacer()
+                Image(systemName: SystemImage.person.rawValue)
+                    .resizable()
+                    .frame(width: 200, height: 200, alignment: .center)
+                    .padding([.top])
+                Spacer()
             }
+            
+            ContactCell(
+                imageName: SystemImage.phone.rawValue,
+                personDetail: person.phone
+            )
+            
+            ContactCell(
+                imageName: SystemImage.tray.rawValue,
+                personDetail: person.email
+            )
         }
         .navigationTitle(person.fullName)
     }
+    
 }
 
 struct PersonDetail_Previews: PreviewProvider {

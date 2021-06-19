@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Person {
+struct Person: Identifiable {
+    
+    let id: Int
     let name: String
     let surname: String
     let phone: String
@@ -16,9 +18,7 @@ struct Person {
     var fullName: String {
         "\(name) \(surname)"
     }
-}
-
-extension Person {
+    
     static func getContactList() -> [Person] {
         
         var persons: [Person] = []
@@ -32,6 +32,7 @@ extension Person {
         
         for index in 0..<iterationCount {
             let person = Person(
+                id: index + 1,
                 name: names[index],
                 surname: surnames[index],
                 phone: phones[index],
@@ -42,5 +43,12 @@ extension Person {
         
         return persons
     }
+}
+
+enum SystemImage: String {
+    case phone = "phone"
+    case persons = "person.3"
+    case person = "person.fill"
+    case tray = "tray"
 }
 

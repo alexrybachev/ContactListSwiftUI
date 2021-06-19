@@ -23,6 +23,6 @@ struct ContactCell: View {
 
 struct ContactCell_Previews: PreviewProvider {
     static var previews: some View {
-        ContactCell(imageName: "person", personDetail: "person")
+        ContactCell(imageName: SystemImage.person.rawValue, personDetail: SystemImage.person.rawValue)
     }
 }

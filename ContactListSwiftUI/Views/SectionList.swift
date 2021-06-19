@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct SectionList: View {
+    
     let persons: [Person]
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(persons, id: \.phone) { person in
+                ForEach(persons) { person in
                     Section(header: Text(person.fullName).fontWeight(.bold)) {
                         ContactCell(
-                            imageName: "phone",
+                            imageName: SystemImage.phone.rawValue,
                             personDetail: person.phone
                         )
                         
                         ContactCell(
-                            imageName: "tray",
+                            imageName: SystemImage.tray.rawValue,
                             personDetail: person.email
                         )
                     }
-                    .textCase(.none)
                 }
+                .textCase(.none)
             }
             .navigationTitle("Section List")
         }
